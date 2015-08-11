@@ -1,0 +1,23 @@
+{
+  "name": "vdomini",
+  "version": "0.1.0",
+  "description": "Minimal virtual DOM implementation",
+  "author": "Florent Cailhol <florent.cailhol@gmail.com>",
+  "license": "MIT",
+  "repository": "ooflorent/vdomini",
+  "keywords": [
+    "virtual",
+    "dom",
+    "vdom"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build": "babel src/ --out-dir lib/"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21"
+  }
+}
