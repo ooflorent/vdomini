@@ -38,12 +38,22 @@ function render() {
 }
 
 function jsonml(node) {
-  var type = typeof node
   if (node == null) return
-  if (type == "string" || type == "number") return String(node)
-  var [ selector, ...children ] = node
+
+  var type = typeof node
+  if (node == "object") return node
+  if (node == "string" || node == "number") return String(node)
+
+  var [ type, ...children ] = node
   var attrs = typeof children[0] == "object" ? children.shift() : {}
-  return h(selector, attrs, children.map(jsonml))
+
+  if (typeof type == "function") {
+    type = function() {
+      return jsonml(node[0].apply(null, arguments))
+    }
+  }
+
+  return h(type, attrs, children.map(jsonml))
 }
 
 loop({}, render, {

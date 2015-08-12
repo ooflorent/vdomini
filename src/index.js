@@ -39,13 +39,7 @@ function setAttribute(el, name, value) {
 }
 
 function removeAttribute(el, name, value) {
-  if (name == "style") {
-    for (var k in value) {
-      el[name][k] = ""
-    }
-  } else {
-    el.removeAttribute(name)
-  }
+  el.removeAttribute(name)
 }
 
 function create(node, currentNamespace) {

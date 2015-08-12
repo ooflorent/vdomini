@@ -2,6 +2,6 @@
   "loose": "all",
   "blacklist": [
     "es6.tailCall",
-    "spec.functionName",
+    "spec.functionName"
   ]
 }
